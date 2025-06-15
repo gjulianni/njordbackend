@@ -1,0 +1,39 @@
+{
+  "name": "njordbackend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+  "build": "tsc",
+  "start": "node dist/server/index.js",
+  "dev": "ts-node server/index.ts"
+},
+ "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.16.0",
+    "mongoose": "^8.13.0",
+    "mysql2": "^3.14.1",
+    "resend": "^4.2.0",
+    "sib-api-v3-sdk": "^8.5.0",
+    "speakeasy": "^2.0.0",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.8",
+    "@types/cors": "^2.8.17",
+    "@types/js-cookie": "^3.0.6",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/papaparse": "^5.3.15",
+    "@types/qrcode": "^1.5.5",
+    "@types/speakeasy": "^2.0.10",
+    "@types/uuid": "^10.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.5"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
