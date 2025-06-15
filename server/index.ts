@@ -3,7 +3,7 @@ dotenv.config();
 import mongoose from 'mongoose';
 import cors from 'cors';
 import bodyParser from 'body-parser';
-import express, { Request, Response } from 'express';
+import express, {Request, Response} from 'express';
 import chalk from 'chalk';
 import cookieParser from 'cookie-parser';
 import { pool } from './databases/mysql/estfrn02';

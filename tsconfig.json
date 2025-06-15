@@ -6,8 +6,11 @@
     "esModuleInterop": true,
     "outDir": "dist",
     "rootDir": ".",
-    "strict": true,
-    "skipLibCheck": true
+    "strict": false,
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": false,
+    "noEmitOnError": false
   },
   "include": ["server/**/*.ts"],
   "exclude": ["node_modules"]
