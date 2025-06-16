@@ -38,8 +38,8 @@ export const getCsvForDashboard = async (req: Request, res: Response) => {
 const startDate = new Date(`${start}T00:00:00-03:00`);
 const endDate = new Date(`${end}T23:59:59-03:00`);
 
-const startStr = `${startDate.getFullYear()}-${String(startDate.getMonth() + 1).padStart(2, '0')}-${String(startDate.getDate()).padStart(2, '0')}`;
-const endStr = `${endDate.getFullYear()}-${String(endDate.getMonth() + 1).padStart(2, '0')}-${String(endDate.getDate()).padStart(2, '0')}`;
+  const startStr = startDate.toISOString().slice(0, 10);
+  const endStr = endDate.toISOString().slice(0, 10);
   
   try {
     const [data] = await pool.query(
