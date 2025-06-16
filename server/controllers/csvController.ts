@@ -35,11 +35,11 @@ export const getCsvForDashboard = async (req: Request, res: Response) => {
     return res.status(400).json({ message: "Datas de início e fim são obrigatórias" });
   }
 
-  const startDate = new Date(start as string);
-  const endDate = new Date(end as string);
+const startDate = new Date(`${start}T00:00:00-03:00`);
+const endDate = new Date(`${end}T23:59:59-03:00`);
 
-  const startStr = startDate.toISOString().slice(0, 10);
-  const endStr = endDate.toISOString().slice(0, 10);
+const startStr = `${startDate.getFullYear()}-${String(startDate.getMonth() + 1).padStart(2, '0')}-${String(startDate.getDate()).padStart(2, '0')}`;
+const endStr = `${endDate.getFullYear()}-${String(endDate.getMonth() + 1).padStart(2, '0')}-${String(endDate.getDate()).padStart(2, '0')}`;
   
   try {
     const [data] = await pool.query(
