@@ -35,16 +35,15 @@ export const getCsvForDashboard = async (req: Request, res: Response) => {
     return res.status(400).json({ message: "Datas de início e fim são obrigatórias" });
   }
 
-const startDate = new Date(`${start}T00:00:00-03:00`);
-const endDate = new Date(`${end}T23:59:59-03:00`);
+const startDate = new Date(`${start}T00:00:00Z`);
+const endDate = new Date(`${end}T23:59:59Z`);
 
-  const startStr = startDate.toISOString().slice(0, 10);
-  const endStr = endDate.toISOString().slice(0, 10);
+
   
   try {
     const [data] = await pool.query(
-      'SELECT *, DATE(reading_time) AS Date FROM `Sensor` WHERE DATE(reading_time) BETWEEN ? AND ?',
-      [startStr, endStr]
+      'SELECT *, DATE(reading_time) AS Date FROM `Sensor` WHERE reading_time BETWEEN ? AND ?',
+      [startDate.toISOString(), endDate.toISOString()]
     );
 
     // Se for por dia, agrupar e calcular médias
